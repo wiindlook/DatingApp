@@ -23,10 +23,6 @@ model: any={};//initialize empty object
   {
     this.accountService.login(this.model).subscribe(response=>{
      this.router.navigateByUrl('/members');
-    },error=>{
-      console.log(error);
-      this.toastr.error(error.error);
-
     })
   }
 
