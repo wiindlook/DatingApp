@@ -51,13 +51,13 @@
                         <label for="city">Country: </label>
                         <input [(ngModel)]="member.country" type="text" name="country" class="form-control mx-2">
                     </div>
-                </form>  
+                </form>
             </tab>
             <tab heading='Edit Photos'>
-            
-                <p>Photo Edits will go here</p> 
+
+                <app-photo-editor [member]="member"></app-photo-editor>
             </tab>
-         
+
         </tabset>
     </div>
     </div>

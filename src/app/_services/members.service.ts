@@ -39,4 +39,12 @@ export class MembersService {
       })
     );
   }
+
+  setMainPhoto(photoId:number){
+    return this.http.put(this.baseUrl +'users/set-main-photo/' + photoId,{});//fiind put ii trb un body asa ca ii dam unul gold
+  }
+
+  deletePhoto(photoId:number){
+    return this.http.delete(this.baseUrl+'users/delete-photo/'+photoId);
+  }
 }
