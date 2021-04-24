@@ -23,13 +23,10 @@ validationErrors:string[]=[];
       console.log(error);
     })
   }
-
-  get400Error()
-  {
-    this.http.get(this.baseUrl+'buggy/bad-request').subscribe(response=>{
+  get400Error() {
+    this.http.get(this.baseUrl + 'buggy/bad-request').subscribe(response => {
       console.log(response);
-    },
-    error=>{
+    }, error => {
       console.log(error);
     })
   }

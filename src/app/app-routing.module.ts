@@ -11,6 +11,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MessagesComponent } from './messages/messages.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { PreventUnsavedChandesGuard } from './_guards/prevent-unsaved-chandes.guard';
+import { MemberDatailedResolver } from './_resolvers/member-datailed.resolver';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -20,7 +21,7 @@ const routes: Routes = [
     canActivate:[AuthGuard],
     children:[
       {path:'members',component:MemberListComponent},
-      {path:'members/:username',component:MemberDetailComponent},
+      {path:'members/:username',component:MemberDetailComponent,resolve:{member:MemberDatailedResolver}},
       {path:'member/edit',component:MemberEditComponent,canDeactivate:[PreventUnsavedChandesGuard]},
       {path:'lists',component:ListsComponent},
       {path:'messages',component:MessagesComponent},
